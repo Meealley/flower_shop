@@ -4,32 +4,30 @@ import 'package:flower_shop/theme/app_colors.dart';
 final List<OnboardingPageModel> onboardingPages = [
   OnboardingPageModel(
     title: [
-      OnboardingPageTitle(
-          text: "Best collection of \n", color: AppConst.kBkDark),
-      OnboardingPageTitle(text: "Outdoor and Indoor ", color: AppConst.kGreen),
-      OnboardingPageTitle(text: "Plant", color: AppConst.kBkDark),
+      OnboardingPageTitle(text: "Welcome to \n", color: AppConst.kBkDark),
+      OnboardingPageTitle(text: "Green ", color: AppConst.kGreen),
+      OnboardingPageTitle(text: "Petals Floral", color: AppConst.kBkDark),
     ],
-    description: "Get more beautiful and scenty flowers at your doorstep",
+    description: "Keeping the planet clean, one Flower per day",
     image: 'assets/images/slide1.png',
   ),
   OnboardingPageModel(
     title: [
-      OnboardingPageTitle(
-          text: "Looking for decoration \n", color: AppConst.kBkDark),
-      OnboardingPageTitle(text: "Home", color: AppConst.kGreen),
-      OnboardingPageTitle(
-          text: "to save the ecosystem", color: AppConst.kBkDark),
+      OnboardingPageTitle(text: "Flower ", color: AppConst.kGreen),
+      OnboardingPageTitle(text: "Arrangements", color: AppConst.kBkDark),
     ],
-    description: "Get more beautiful and scenty flowers at your doorstep",
+    description:
+        "Make any moment extraordinary with our exquisite floral arrangements",
     image: 'assets/images/slide2.png',
   ),
   OnboardingPageModel(
     title: [
-      OnboardingPageTitle(text: "Try it out \n", color: AppConst.kBkDark),
-      OnboardingPageTitle(text: "For food", color: AppConst.kGreen),
-      OnboardingPageTitle(text: "and the plant", color: AppConst.kBkDark),
+      OnboardingPageTitle(text: "Bouquet   \n", color: AppConst.kGreen),
+      OnboardingPageTitle(text: "For Someone ", color: AppConst.kBkDark),
+      OnboardingPageTitle(text: "Special", color: AppConst.kBkDark),
     ],
-    description: "Get more beautiful and scenty flowers at your doorstep",
+    description:
+        "Discover the joy and beauty that blooms can bring into your life by bringing home one of our stunning bouquets.",
     image: 'assets/images/sildethree.png',
   ),
 ];

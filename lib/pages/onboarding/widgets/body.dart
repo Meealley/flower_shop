@@ -1,5 +1,6 @@
 import 'package:flower_shop/data/onboarding_data.dart';
 import 'package:flower_shop/pages/onboarding/model/onboarding_model.dart';
+import 'package:flower_shop/pages/onboarding/widgets/onboarding_controls.dart';
 import 'package:flower_shop/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,6 +17,7 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   PageController pageController = PageController();
   int _indexSelected = 0;
+  bool get isLastPage => _indexSelected == onboardingPages.length - 1;
 
   @override
   void dispose() {
@@ -32,8 +34,20 @@ class _BodyState extends State<Body> {
 
   _onDotPressed(int index) {
     pageController.animateToPage(index,
-        duration: Duration(microseconds: 400), curve: Curves.easeInOut);
+        duration: const Duration(milliseconds: 400), curve: Curves.easeInOut);
   }
+
+  _onNexted() {
+    setState(() {
+      if (_indexSelected + 1 < onboardingPages.length) {
+        _indexSelected = _indexSelected + 1;
+      }
+    });
+    pageController.animateToPage(_indexSelected,
+        duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
+  }
+
+  _onskipped() {}
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +70,14 @@ class _BodyState extends State<Body> {
                   dotsLength: onboardingPages.length,
                   indexSelected: _indexSelected,
                   onDotPressed: _onDotPressed,
+                ),
+                SizedBox(
+                  height: 70,
+                ),
+                OnboardingControls(
+                  isLastPage: isLastPage,
+                  onSkipPressed: _onskipped,
+                  onNextPressed: _onNexted,
                 ),
               ],
             ),
@@ -147,7 +169,7 @@ class OnboardingPage extends StatelessWidget {
             page.image,
             height: 350,
           ),
-          SizedBox(
+          const SizedBox(
             height: 40,
           ),
           RichText(
@@ -157,21 +179,23 @@ class OnboardingPage extends StatelessWidget {
                       (text) => TextSpan(
                         text: text.text,
                         style: GoogleFonts.epilogue(
-                            textStyle: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: text.color,
-                                fontSize: 24)),
+                          textStyle: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: text.color,
+                              fontSize: 24),
+                        ),
                       ),
                     )
                     .toList()),
             textAlign: TextAlign.center,
           ),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           Text(
             page.description,
-            style: GoogleFonts.epilogue(textStyle: TextStyle(fontSize: 16)),
+            style: GoogleFonts.epilogue(
+                textStyle: const TextStyle(fontSize: 16, height: 1.5)),
             textAlign: TextAlign.center,
           )
         ],
