@@ -44,7 +44,7 @@ class OnboardingControls extends StatelessWidget {
       child: Text(
         'Skip',
         style: GoogleFonts.epilogue(
-            textStyle: TextStyle(fontSize: 17, color: AppConst.kGreyBk)),
+            textStyle: const TextStyle(fontSize: 17, color: AppConst.kGreyBk)),
       ),
     );
   }
@@ -71,14 +71,14 @@ class CustomButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
-          minimumSize: Size(50, 40),
+          minimumSize: const Size(50, 50),
           backgroundColor: AppConst.kGreen,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12)),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12)),
       child: Text(
         title,
         style: GoogleFonts.epilogue(
-            textStyle: TextStyle(fontSize: 16, color: AppConst.kLight)),
+            textStyle: const TextStyle(fontSize: 18, color: AppConst.kLight)),
       ),
     );
   }

@@ -47,7 +47,13 @@ class _BodyState extends State<Body> {
         duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
   }
 
-  _onskipped() {}
+  _onskipped() {
+    setState(() {
+      _indexSelected = 3;
+    });
+    pageController.animateToPage(_indexSelected,
+        duration: const Duration(milliseconds: 300), curve: Curves.easeIn);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +77,7 @@ class _BodyState extends State<Body> {
                   indexSelected: _indexSelected,
                   onDotPressed: _onDotPressed,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 70,
                 ),
                 OnboardingControls(
